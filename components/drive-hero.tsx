@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { seedVehicles } from "@/lib/data";
 
 const SLIDES = [
@@ -66,7 +66,7 @@ export function DriveHero() {
     <section
       className="drive-hero"
       aria-label="Featured vehicles"
-      style={{ backgroundColor: activeSlide.bg, ["--drive-accent" as string]: activeSlide.accent } as React.CSSProperties}
+      style={{ backgroundColor: activeSlide.bg, ["--drive-accent" as string]: activeSlide.accent } as CSSProperties}
     >
       <div className="drive-grain" aria-hidden="true" />
       <div className="drive-ghost" aria-hidden="true">DRIVE DIFFERENT</div>
