@@ -1,0 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Fuel, Gauge, Users } from "lucide-react";
+import type { Vehicle } from "@/lib/data";
+import { money } from "@/lib/data";
+export function VehicleCard({vehicle}:{vehicle:Vehicle}){return <article className="vehicle-card"><Link href={"/rent/vehicle/"+vehicle.id} aria-label={"View "+vehicle.name}><div className="vehicle-image-wrap"><Image className="vehicle-image" src={vehicle.image} alt={vehicle.name} fill sizes="(max-width: 640px) 100vw, (max-width: 900px) 50vw, 33vw"/><span className="vehicle-tag">{vehicle.category}</span></div></Link><div className="vehicle-info"><div className="vehicle-meta"><span>{vehicle.city}</span><span>★ {vehicle.rating.toFixed(2)} · {vehicle.trips} trips</span></div><h3 className="vehicle-title">{vehicle.make} {vehicle.name}</h3><div className="vehicle-specs"><span><Users size={14}/>{vehicle.seats} seats</span><span><Gauge size={14}/>{vehicle.transmission}</span><span><Fuel size={14}/>{vehicle.fuel}</span></div><div className="vehicle-bottom"><div className="price">{money(vehicle.price)} <small>/ day</small></div><Link className="arrow-link" href={"/rent/vehicle/"+vehicle.id} aria-label={"Explore "+vehicle.name}><ArrowUpRight size={18}/></Link></div></div></article>}
