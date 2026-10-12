@@ -39,3 +39,76 @@
 @media(max-width:900px){.drive-hero{min-height:620px}.drive-copy{left:6%;bottom:9%;width:40vw}.drive-slide{width:68vw;height:51%;bottom:17%}.drive-slide--left{left:23%;width:23vw;height:23%;bottom:19%}.drive-slide--right{left:77%;width:23vw;height:23%;bottom:19%}.drive-slide--back{width:24vw;height:22%;bottom:19%}.drive-ghost{font-size:clamp(74px,19vw,190px);top:22%}.drive-discover{right:5%;bottom:10%}.drive-description{max-width:285px}}
 @media(max-width:640px){.drive-hero{height:calc(100svh - 64px);min-height:650px}.drive-brand{top:19px;left:5%;gap:9px;font-size:8px;letter-spacing:1.2px}.drive-brand-mark{width:30px;height:30px}.drive-ghost{top:24%;font-size:clamp(68px,20vw,126px);letter-spacing:-.09em;opacity:.2}.drive-slide{width:88vw;height:43%;bottom:34%;border-radius:2px}.drive-slide--left{left:18%;width:30vw;height:14%;bottom:35%;opacity:.72}.drive-slide--right{left:82%;width:30vw;height:14%;bottom:35%;opacity:.72}.drive-slide--back{left:50%;width:26vw;height:12%;bottom:35%;opacity:.65}.drive-image-caption{left:12px;right:12px;bottom:10px;font-size:8px;letter-spacing:1px}.drive-copy{left:5%;bottom:8%;width:58%;max-width:300px}.drive-kicker{font-size:8px;letter-spacing:1.2px}.drive-copy h1{font-size:clamp(29px,8.4vw,42px);margin:12px 0 0;letter-spacing:-.07em}.drive-description{display:none}.drive-controls{gap:8px;margin-top:15px}.drive-controls button{width:42px;height:42px}.drive-controls button svg{width:21px;height:21px}.drive-count{font-size:9px;margin-left:3px;gap:7px}.drive-count i{width:16px}.drive-discover{right:5%;bottom:9%;gap:5px;font-size:15px;letter-spacing:-.045em}.drive-discover svg{width:21px;height:21px}.drive-bottom-note{bottom:13px;left:5%;right:5%;font-size:7px;letter-spacing:.8px}.drive-bottom-note span:last-child{display:none}}
 @media(prefers-reduced-motion:reduce){.drive-hero,.drive-slide,.drive-copy h1 em,.drive-brand-mark,.drive-brand i,.drive-kicker span,.drive-discover,.drive-discover svg{transition:none!important}}
+
+
+/* Scroll-driven Indian everyday vehicle showroom */
+.india-showcase{position:relative;background:#20251f;color:#f5f5ed;padding:0 7%;border-top:1px solid #ffffff0c;isolation:isolate}
+.india-showcase.car-showcase{background:#e9ebdf;color:#20251f}
+.showcase-sticky{position:sticky;top:76px;height:calc(100vh - 76px);min-height:620px;max-height:900px;display:flex;flex-direction:column;justify-content:center;max-width:1420px;margin:auto;overflow:hidden}
+.showcase-topline{display:flex;align-items:end;justify-content:space-between;gap:32px;padding-top:20px;position:relative;z-index:2}
+.showcase-eyebrow{font:10px var(--mono);letter-spacing:1.8px;text-transform:uppercase;color:#b9d65a}
+.car-showcase .showcase-eyebrow{color:#788d2b}
+.showcase-topline h2{font-size:clamp(34px,4vw,56px);letter-spacing:-3px;line-height:1;margin:13px 0 0;font-weight:600;max-width:600px}
+.showcase-topline>p{max-width:330px;color:#aeb3a7;line-height:1.8;font-size:12px;margin:0 0 3px}
+.car-showcase .showcase-topline>p{color:#707365}
+.showcase-stage{display:grid;grid-template-columns:minmax(180px,.75fr) minmax(320px,1.7fr) minmax(190px,.75fr);align-items:center;gap:22px;flex:1;min-height:0;position:relative}
+.showcase-side{position:relative;z-index:3;min-width:0}
+.showcase-index,.showcase-maker,.showcase-kind,.showcase-price-label,.showcase-spec-label{display:block;font:10px var(--mono);letter-spacing:1.3px;text-transform:uppercase;color:#a8ad9e}
+.car-showcase .showcase-index,.car-showcase .showcase-maker,.car-showcase .showcase-kind,.car-showcase .showcase-price-label,.car-showcase .showcase-spec-label{color:#75786b}
+.showcase-maker{margin-top:29px;color:#c5db80}
+.car-showcase .showcase-maker{color:#768a30}
+.showcase-side h3{font-size:clamp(30px,3.4vw,48px);letter-spacing:-2.5px;line-height:1.02;margin:10px 0 12px;font-weight:600}
+.showcase-kind{color:#c5db80}
+.car-showcase .showcase-kind{color:#788d2b}
+.showcase-description{font-size:12px;line-height:1.85;color:#b1b6a9;max-width:245px;margin:20px 0}
+.car-showcase .showcase-description{color:#6f7266}
+.showcase-city{display:flex;align-items:center;gap:7px;font-size:11px;color:#d1d4ca;margin-top:25px}
+.car-showcase .showcase-city{color:#5d6254}
+.showcase-vehicle{height:min(52vh,470px);min-height:270px;position:relative;display:flex;align-items:center;justify-content:center;perspective:1000px;isolation:isolate}
+.vehicle-image-3d{position:absolute;inset:7% -10% 10%;transform:rotateY(-12deg) rotateX(2deg) scale(1.02);transform-style:preserve-3d;filter:drop-shadow(0 28px 18px #0005);animation:vehicleFloat 5s ease-in-out infinite;transition:transform .6s cubic-bezier(.2,.8,.2,1);z-index:2}
+.vehicle-image-3d img{mix-blend-mode:screen}
+.car-showcase .vehicle-image-3d img{mix-blend-mode:multiply}
+.vehicle-glow{position:absolute;width:62%;height:55%;border-radius:50%;background:radial-gradient(ellipse,#b3d25228 0%,transparent 68%);filter:blur(14px);z-index:0}
+.car-showcase .vehicle-glow{background:radial-gradient(ellipse,#a4ba5033 0%,transparent 68%)}
+.vehicle-orbit{position:absolute;border:1px solid #e6f1d51a;border-radius:50%;width:80%;height:42%;transform:rotate(-16deg);z-index:0}
+.vehicle-orbit.orbit-two{width:100%;height:55%;transform:rotate(17deg);border-color:#e6f1d50d}
+.car-showcase .vehicle-orbit{border-color:#25291c17}
+.showcase-floor{position:absolute;bottom:14%;left:4%;right:4%;height:1px;background:linear-gradient(90deg,transparent,#ffffff38,transparent);z-index:1}
+.car-showcase .showcase-floor{background:linear-gradient(90deg,transparent,#20251f40,transparent)}
+.showcase-scroll-hint{position:absolute;bottom:1%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:7px;white-space:nowrap;font:9px var(--mono);letter-spacing:1.3px;color:#9ea598;z-index:4}
+.car-showcase .showcase-scroll-hint{color:#75786b}
+.showcase-price-label{margin-bottom:9px}
+.showcase-price{font-size:clamp(28px,3vw,40px);font-weight:700;letter-spacing:-2px;white-space:nowrap}
+.showcase-price small{font-size:11px;font-weight:500;letter-spacing:0;color:#aeb3a7}
+.car-showcase .showcase-price small{color:#707365}
+.showcase-spec-label{margin:32px 0 8px}
+.showcase-specs{border-top:1px solid #ffffff25}
+.car-showcase .showcase-specs{border-color:#20251f25}
+.showcase-spec{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid #ffffff25}
+.car-showcase .showcase-spec{border-color:#20251f25}
+.showcase-spec-icon{width:31px;height:31px;display:grid;place-items:center;border:1px solid #ffffff2a;border-radius:50%;color:#c6dc83;flex-shrink:0}
+.car-showcase .showcase-spec-icon{border-color:#20251f2a;color:#788d2b}
+.showcase-spec small,.showcase-spec strong{display:block}
+.showcase-spec small{font:9px var(--mono);text-transform:uppercase;letter-spacing:.8px;color:#a3a99a;margin-bottom:4px}
+.car-showcase .showcase-spec small{color:#7c7e72}
+.showcase-spec strong{font-size:11px;font-weight:600}
+.showcase-rent{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:20px;padding:14px 15px;background:#d9fa58;color:#20251f;font-size:11px;font-weight:800}
+.showcase-rent:hover{background:#e7ff91}
+.showcase-progress{height:2px;background:#ffffff20;margin:0 0 12px;position:relative}
+.showcase-progress>span{display:block;height:100%;background:#d9fa58;transition:width .18s linear}
+.car-showcase .showcase-progress{background:#20251f20}
+.car-showcase .showcase-progress>span{background:#788d2b}
+.showcase-foot{display:flex;justify-content:space-between;padding-bottom:16px;font:9px var(--mono);letter-spacing:1.2px;color:#a0a597}
+.car-showcase .showcase-foot{color:#777a6e}
+@keyframes vehicleFloat{0%,100%{transform:translateY(0) rotateY(-12deg) rotateX(2deg) scale(1.02)}50%{transform:translateY(-8px) rotateY(-8deg) rotateX(1deg) scale(1.035)}}
+@media(max-width:900px){.india-showcase{padding:0 5%}.showcase-sticky{top:68px;height:calc(100vh - 68px);min-height:600px}.showcase-stage{grid-template-columns:minmax(150px,.8fr) minmax(230px,1.3fr) minmax(160px,.8fr);gap:12px}.showcase-topline h2{font-size:38px}.showcase-topline>p{max-width:250px}.showcase-side h3{font-size:32px}.showcase-vehicle{min-height:250px}.showcase-price{font-size:28px}.showcase-spec{gap:7px}.showcase-spec-icon{width:27px;height:27px}}
+@media(max-width:640px){.india-showcase{padding:0 5%;min-height:240vh!important}.showcase-sticky{top:64px;height:calc(100svh - 64px);min-height:640px;max-height:820px;justify-content:flex-start}.showcase-topline{display:block;padding-top:22px}.showcase-topline h2{font-size:35px;letter-spacing:-2px}.showcase-topline>p{font-size:11px;margin-top:12px;max-width:100%}.showcase-stage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(190px,1fr) auto;gap:8px 12px;align-content:stretch;flex:1;padding:15px 0 8px}.showcase-side-left{grid-column:1;grid-row:1}.showcase-side-left .showcase-maker{margin-top:12px}.showcase-side h3{font-size:28px;margin:8px 0}.showcase-description{font-size:11px;margin:10px 0;line-height:1.6}.showcase-city{margin-top:10px;font-size:10px}.showcase-vehicle{grid-column:1/-1;grid-row:2;min-height:190px;height:100%;max-height:310px}.vehicle-image-3d{inset:0 -4% 8%}.showcase-side-right{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:1fr 1.2fr;column-gap:12px;align-items:start}.showcase-price-label{grid-column:1}.showcase-price{grid-column:1;font-size:30px}.showcase-spec-label{grid-column:2;grid-row:1;margin:0 0 6px}.showcase-specs{grid-column:2;grid-row:2/4}.showcase-spec{padding:7px 0;gap:7px}.showcase-spec-icon{width:25px;height:25px}.showcase-spec strong{font-size:10px}.showcase-spec small{font-size:8px}.showcase-rent{grid-column:1;align-self:end;margin-top:12px;padding:12px;font-size:10px}.showcase-scroll-hint{bottom:-1%;font-size:8px}.showcase-progress{margin-top:0}.showcase-foot{padding-bottom:12px;font-size:8px}.showcase-index{font-size:9px}.showcase-kind{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.vehicle-image-3d{animation:none;transition:none}.showcase-progress>span{transition:none}}
+
+/* Actual glTF model viewer: scroll changes camera azimuth, user can drag to inspect */
+.real-3d-model{position:absolute;inset:0;z-index:2;--poster-color:transparent;--progress-bar-color:#d9fa58;--progress-mask:transparent;outline:none}
+.real-3d-model::part(default-progress-bar){height:2px}
+.real-3d-model::part(default-progress-mask){background:transparent}
+.vehicle-image-3d{display:none}
+@media(max-width:640px){.real-3d-model{inset:0}.showcase-vehicle{overflow:visible}}
+@media(prefers-reduced-motion:reduce){.real-3d-model{scroll-behavior:auto}}
