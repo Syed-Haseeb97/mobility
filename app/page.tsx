@@ -1,6 +1,78 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ArrowUpRight, CalendarDays, MapPin, MoveUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, CalendarDays, MapPin, MoveUpRight } from "lucide-react";
 import { seedVehicles } from "@/lib/data";
 import { VehicleCard } from "@/components/vehicle-card";
-export default function Home(){return <main><section className="hero"><div className="hero-grid"><div><div className="eyebrow">A better way to get there</div><h1>Find your<br/>kind of <em>drive.</em></h1><p className="hero-copy">Exceptional cars. Independent hosts. The freedom to take the long way around. Find a vehicle that makes the journey part of the story.</p><div className="hero-actions"><Link className="button-primary" href="/rent">Explore the collection <ArrowUpRight size={16}/></Link><Link className="text-link" href="/list-your-vehicle">Share your car <ArrowRight size={15}/></Link></div></div><div className="hero-visual"><Image className="hero-car" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=90" alt="Premium sports car on the open road" fill priority sizes="(max-width: 640px) 100vw, 50vw" style={{objectFit:"cover"}}/><div className="hero-stamp">GOOD CARS<br/>GOOD PEOPLE<br/>GOOD MILES</div><div className="visual-index"><b>01</b> / DRIVE SOMETHING DIFFERENT</div></div></div></section><div className="search-wrap"><form className="search-panel" action="/rent"><div className="search-field"><label htmlFor="city"><MapPin size={12} style={{display:"inline",marginRight:5}}/>Pick-up location</label><select id="city" name="city" defaultValue=""><option value="">Anywhere in India</option><option>Chennai</option><option>Bengaluru</option><option>Hyderabad</option><option>Mumbai</option><option>Kochi</option></select></div><div className="search-field"><label htmlFor="start"><CalendarDays size={12} style={{display:"inline",marginRight:5}}/>Pick-up date</label><input id="start" name="start" type="date" min={new Date().toISOString().slice(0,10)}/></div><div className="search-field"><label htmlFor="end">Return date</label><input id="end" name="end" type="date" min={new Date().toISOString().slice(0,10)}/></div><button className="search-button" type="submit">Find your drive <ArrowUpRight size={16}/></button></form></div><section className="section"><div className="section-head"><div><div className="eyebrow">The considered collection</div><h2>Not just any car.</h2><p className="section-sub">Distinctive vehicles, chosen by the people who know them best. Your next favourite drive starts here.</p></div><Link className="text-link" href="/rent">Explore all vehicles <ArrowUpRight size={16}/></Link></div><div className="vehicle-grid">{seedVehicles.slice(0,3).map(v=><VehicleCard key={v.id} vehicle={v}/>)}</div><div className="stat-row"><div className="stat"><strong>01 — 01</strong><span>Your dates. Your terms.</span></div><div className="stat"><strong>Real people</strong><span>Independent local hosts</span></div><div className="stat"><strong>Better miles</strong><span>Memorable by design</span></div></div></section><section className="dark-band"><div><div className="eyebrow">For the ones with the keys</div><h2>Your car has more stories to tell.</h2><p>Share your vehicle with thoughtful travellers, set your own availability and manage everything from one simple host space.</p></div><Link className="button-primary" href="/list-your-vehicle">Become a host <MoveUpRight size={16}/></Link></section><section className="section" style={{paddingTop:70,paddingBottom:70}}><div className="section-head"><div><div className="eyebrow">How it works</div><h2>Easy to start.<br/>Hard to forget.</h2></div></div><div className="vehicle-grid">{[{n:"01",title:"Find your fit",body:"Search a curated collection by city, style and the dates that work for you."},{n:"02",title:"Make it yours",body:"Choose your dates, review a transparent estimate and confirm your demo booking."},{n:"03",title:"Take the long way",body:"Connect with your host and make the most of every mile."}].map(x=><div key={x.n} style={{borderTop:"1px solid #d9dbcf",paddingTop:20}}><div className="eyebrow">{x.n} / THE EXPERIENCE</div><h3 style={{fontSize:23,letterSpacing:"-1px",margin:"20px 0 8px"}}>{x.title}</h3><p className="muted">{x.body}</p></div>)}</div></section></main>}
+import { DriveHero } from "@/components/drive-hero";
+
+export default function Home() {
+  return (
+    <main>
+      <DriveHero />
+      <div className="search-wrap">
+        <form className="search-panel" action="/rent">
+          <div className="search-field">
+            <label htmlFor="city"><MapPin size={12} style={{ display: "inline", marginRight: 5 }} />Pick-up location</label>
+            <select id="city" name="city" defaultValue="">
+              <option value="">Anywhere in India</option>
+              <option>Chennai</option><option>Bengaluru</option><option>Hyderabad</option><option>Mumbai</option><option>Kochi</option>
+            </select>
+          </div>
+          <div className="search-field">
+            <label htmlFor="start"><CalendarDays size={12} style={{ display: "inline", marginRight: 5 }} />Pick-up date</label>
+            <input id="start" name="start" type="date" min={new Date().toISOString().slice(0, 10)} />
+          </div>
+          <div className="search-field">
+            <label htmlFor="end">Return date</label>
+            <input id="end" name="end" type="date" min={new Date().toISOString().slice(0, 10)} />
+          </div>
+          <button className="search-button" type="submit">Find your drive <ArrowUpRight size={16} /></button>
+        </form>
+      </div>
+
+      <section className="section">
+        <div className="section-head">
+          <div>
+            <div className="eyebrow">The considered collection</div>
+            <h2>Not just any car.</h2>
+            <p className="section-sub">Distinctive vehicles, chosen by the people who know them best. Your next favourite drive starts here.</p>
+          </div>
+          <Link className="text-link" href="/rent">Explore all vehicles <ArrowUpRight size={16} /></Link>
+        </div>
+        <div className="vehicle-grid">{seedVehicles.slice(0, 3).map((vehicle) => <VehicleCard key={vehicle.id} vehicle={vehicle} />)}</div>
+        <div className="stat-row">
+          <div className="stat"><strong>01 — 01</strong><span>Your dates. Your terms.</span></div>
+          <div className="stat"><strong>Real people</strong><span>Independent local hosts</span></div>
+          <div className="stat"><strong>Better miles</strong><span>Memorable by design</span></div>
+        </div>
+      </section>
+
+      <section className="dark-band">
+        <div>
+          <div className="eyebrow">For the ones with the keys</div>
+          <h2>Your car has more stories to tell.</h2>
+          <p>Share your vehicle with thoughtful travellers, set your own availability and manage everything from one simple host space.</p>
+        </div>
+        <Link className="button-primary" href="/list-your-vehicle">Become a host <MoveUpRight size={16} /></Link>
+      </section>
+
+      <section className="section" style={{ paddingTop: 70, paddingBottom: 70 }}>
+        <div className="section-head">
+          <div><div className="eyebrow">How it works</div><h2>Easy to start.<br />Hard to forget.</h2></div>
+        </div>
+        <div className="vehicle-grid">
+          {[
+            { n: "01", title: "Find your fit", body: "Search a curated collection by city, style and the dates that work for you." },
+            { n: "02", title: "Make it yours", body: "Choose your dates, review a transparent estimate and confirm your demo booking." },
+            { n: "03", title: "Take the long way", body: "Connect with your host and make the most of every mile." },
+          ].map((item) => (
+            <div key={item.n} style={{ borderTop: "1px solid #d9dbcf", paddingTop: 20 }}>
+              <div className="eyebrow">{item.n} / THE EXPERIENCE</div>
+              <h3 style={{ fontSize: 23, letterSpacing: "-1px", margin: "20px 0 8px" }}>{item.title}</h3>
+              <p className="muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}
