@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, CalendarDays, MapPin, MoveUpRight } from "lucide-react";
+import { ArrowUpRight, CalendarDays, MapPin, MoveUpRight } from "lucide-react";
 import { seedVehicles } from "@/lib/data";
 import { VehicleCard } from "@/components/vehicle-card";
 import { DriveHero } from "@/components/drive-hero";
+import { IndiaScrollShowroom } from "@/components/india-scroll-showroom";
 
 export default function Home() {
   return (
@@ -29,12 +30,14 @@ export default function Home() {
         </form>
       </div>
 
+      <IndiaScrollShowroom />
+
       <section className="section">
         <div className="section-head">
           <div>
             <div className="eyebrow">The considered collection</div>
-            <h2>Not just any car.</h2>
-            <p className="section-sub">Distinctive vehicles, chosen by the people who know them best. Your next favourite drive starts here.</p>
+            <h2>Find your everyday favourite.</h2>
+            <p className="section-sub">Practical rides, familiar names, and rental prices that make sense. Your next trip starts here.</p>
           </div>
           <Link className="text-link" href="/rent">Explore all vehicles <ArrowUpRight size={16} /></Link>
         </div>
@@ -49,7 +52,7 @@ export default function Home() {
       <section className="dark-band">
         <div>
           <div className="eyebrow">For the ones with the keys</div>
-          <h2>Your car has more stories to tell.</h2>
+          <h2>Your vehicle has more stories to tell.</h2>
           <p>Share your vehicle with thoughtful travellers, set your own availability and manage everything from one simple host space.</p>
         </div>
         <Link className="button-primary" href="/list-your-vehicle">Become a host <MoveUpRight size={16} /></Link>
@@ -61,7 +64,7 @@ export default function Home() {
         </div>
         <div className="vehicle-grid">
           {[
-            { n: "01", title: "Find your fit", body: "Search a curated collection by city, style and the dates that work for you." },
+            { n: "01", title: "Find your fit", body: "Search familiar vehicles by city, category and the dates that work for you." },
             { n: "02", title: "Make it yours", body: "Choose your dates, review a transparent estimate and confirm your demo booking." },
             { n: "03", title: "Take the long way", body: "Connect with your host and make the most of every mile." },
           ].map((item) => (
